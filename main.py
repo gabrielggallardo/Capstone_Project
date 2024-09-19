@@ -6,7 +6,8 @@ from sklearn.metrics import accuracy_score, classification_report
 
 # Step 1: Load the dataset
 df = pd.read_csv(r'C:/Users/Clyde_glhf/Desktop/Hate Speech ML App/Capstone_Project/Data_Set_Folder/Capstone Dataset.csv')
-print(df.head())
+
+#print(df.head())
 
 # Step 2: Preprocess the data
 X = df['tweet']
