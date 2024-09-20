@@ -14,7 +14,9 @@ df = pd.read_csv(r'C:/Users/Clyde_glhf/Desktop/Hate Speech ML App/Capstone_Proje
 
 # Checking for class distribution, saved for debugging purposes
 # print("Class distribution in the dataset:")
-print(df['class'].value_counts())
+# print(df['class'].value_counts())
+
+#Greeting to User Message
 print("\n\nHello, Welcome to our Hate Speech Detection System, picking out the bad apples so you don't have to!")
 print("\nOur dataset is composed of 3 classes: 0 - representing Neither, 1 - representing Offensive Language, 2 - representing Hate Speech")
 
@@ -121,4 +123,4 @@ while True:
         print(f"Classification: {result}")
     else:
         print("\nInvalid input. Please type 'next' or 'exit'.")
-print("\nThank you for using our Hate Speech Detection System, have a great day!")
+print("\nThank you for using our Hate Speech Detection System, have a great day!\n\n")
