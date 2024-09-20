@@ -51,7 +51,7 @@ def classify_tweet(tweet):
     tweet_vec = vectorizer.transform([tweet])
     prediction = nb_classifier.predict(tweet_vec)
     if prediction == 0:
-        return "Hate Speech"
+        return "Hate Speech, recommendation to remove"
     elif prediction == 1:
         return "Offensive Language"
     else:
