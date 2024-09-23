@@ -8,6 +8,13 @@ from sklearn.naive_bayes import MultinomialNB
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix, roc_curve, auc
 from imblearn.over_sampling import RandomOverSampler
 import random
+import re
+
+# Function to clean text data
+def clean_text(text):
+    # Remove special characters and numbers, keeping only letters and spaces
+    text = re.sub(r'[^a-zA-Z\s]', '', text)
+    return text
 
 # Step 1: Loads up the lovely dataset
 df = pd.read_csv(r'C:/Users/Clyde_glhf/Desktop/Hate Speech ML App/Capstone_Project/Data_Set_Folder/Capstone Dataset.csv')
