@@ -9,6 +9,21 @@ from sklearn.metrics import accuracy_score, classification_report, confusion_mat
 from imblearn.over_sampling import RandomOverSampler
 import random
 import re
+import os
+import sys
+
+def resource_path(relative_path):
+    """ Get the absolute path to the resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except AttributeError:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
+csv_file_path = resource_path('Capstone Dataset.csv')
+
 
 # Function to clean text data
 def clean_text(text):
@@ -17,14 +32,14 @@ def clean_text(text):
     return text
 
 # Step 1: Loads up the lovely dataset
-df = pd.read_csv(r'C:/Users/Clyde_glhf/Desktop/Hate Speech ML App/Capstone_Project/Data_Set_Folder/Capstone Dataset.csv')
+df = pd.read_csv(csv_file_path)
 
 # Checking for class distribution, saved for debugging purposes
 # print("Class distribution in the dataset:")
 # print(df['class'].value_counts())
 
 #Greeting to User Message
-print("\n\nHello, Welcome to our Hate Speech Detection System, picking out the bad apples so you don't have to!")
+print("\n\nHello, Welcome to Beddit's Hate Speech Detection System, picking out the bad apples so you don't have to!")
 print("\nOur dataset is composed of 3 classes: 0 - representing Neither, 1 - representing Offensive Language, 2 - representing Hate Speech")
 
 # Visualization 1: Bar Chart Class Distribution
